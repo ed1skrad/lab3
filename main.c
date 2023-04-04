@@ -49,7 +49,10 @@ int main() {
     file = fopen("output.bmp","wb");
     writeInfo(header, infoHeader, pixels, file, pixelArraySize);
 
-    fclose(file);
+    if (file != NULL) {
+        fclose(file);
+    }
+    
     free(pixels);
     return 0;
 }
