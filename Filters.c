@@ -108,6 +108,7 @@ void medianFilter(BMPColor *pixels, int width, int height) {
     }
 
     memcpy(pixels, temp, sizeof(BMPColor) * width * height);
+    free(temp);
 }
 void gammaCorrection(BMPColor *color, float gammaValue) {
     color->red   = (unsigned char)(my_pow(color->red   / 255.0f, gammaValue) * 255.0f);

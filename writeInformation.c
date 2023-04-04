@@ -3,7 +3,7 @@
 //
 // Created by Artem on 04.04.2023.
 //
-void writeInfo(BMPHeader header, BMPInfoHeader infoHeader, BMPColor* pixels, FILE* file, int pixelArraySize)
+void writeInfo(BMPHeader header, BMPInfoHeader infoHeader, const BMPColor* pixels, FILE* file, int pixelArraySize)
 {
     fwrite(&header,sizeof(header),1,file);
     fwrite(&infoHeader,sizeof(infoHeader),1,file);

@@ -10,7 +10,7 @@ void negative(BMPColor *color);
 void grayscale(BMPColor *color);
 void medianFilter(BMPColor *pixels, int width, int height);
 void gammaCorrection(BMPColor *color, float gammaValue);
-void menu(BMPHeader header, BMPInfoHeader infoHeader, BMPColor* pixels);
-void writeInfo(BMPHeader header, BMPInfoHeader infoHeader, BMPColor* pixels, FILE* file, int pixelArraySize);
+void menu(BMPInfoHeader infoHeader, BMPColor* pixels);
+void writeInfo(BMPHeader header, BMPInfoHeader infoHeader, const BMPColor* pixels, FILE* file, int pixelArraySize);
 char* getFileName();
 #endif //UNTITLED20_INIT_H

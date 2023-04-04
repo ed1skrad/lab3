@@ -5,7 +5,7 @@
 //
 // Created by Artem on 04.04.2023.
 //
-void menu(BMPHeader header, BMPInfoHeader infoHeader, BMPColor* pixels)
+void menu(BMPInfoHeader infoHeader, BMPColor* pixels)
 {
     int choice;
     printf("Enter the operation you want to perform:\n");

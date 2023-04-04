@@ -44,11 +44,11 @@ int main() {
 
     fclose(file);
 
-    menu(header, infoHeader, pixels);
+    menu(infoHeader, pixels);
 
     file = fopen("output.bmp","wb");
     writeInfo(header, infoHeader, pixels, file, pixelArraySize);
-
+    file = NULL;
     fclose(file);
     free(pixels);
     return 0;
