@@ -44,7 +44,7 @@ void sortArray(unsigned char *values, int size) {
     }
 }
 
-void getPixelValues(BMPColor *pixels, int width, int height, int x, int y, unsigned char *redValues, unsigned char *greenValues, unsigned char *blueValues) {
+void getPixelValues(const BMPColor *pixels, int width, int x, int y, unsigned char *redValues, unsigned char *greenValues, unsigned char *blueValues) {
     redValues[0] = pixels[(y - 1) * width + x - 1].red;
     redValues[1] = pixels[(y - 1) * width + x].red;
     redValues[2] = pixels[(y - 1) * width + x + 1].red;
@@ -81,7 +81,7 @@ void medianFilter(BMPColor *pixels, int width, int height) {
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            BMPColor *pixel = &pixels[y * width + x];
+            const BMPColor *pixel = &pixels[y * width + x];
 
             if (x == 0 || y == 0 || x == width - 1 || y == height - 1) {
                 temp[y * width + x] = *pixel;
@@ -92,7 +92,7 @@ void medianFilter(BMPColor *pixels, int width, int height) {
             unsigned char greenValues[9] = {};
             unsigned char blueValues[9] = {};
 
-            getPixelValues(pixels, width, height, x, y, redValues, greenValues, blueValues);
+            getPixelValues(pixels, width, x, y, redValues, greenValues, blueValues);
 
             sortArray(redValues, sizeof(redValues) / sizeof(redValues[0]));
             sortArray(greenValues, sizeof(greenValues) / sizeof(greenValues[0]));
