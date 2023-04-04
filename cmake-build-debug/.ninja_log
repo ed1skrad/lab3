@@ -1,0 +1,7 @@
+# ninja log v5
+11	148	7023415884486111	CMakeFiles/untitled20.dir/writeInformation.c.obj	744524db76ad49c2
+0	157	7023415884576070	CMakeFiles/untitled20.dir/main.c.obj	559afa7c5ab6d109
+16	158	7023415884576070	CMakeFiles/untitled20.dir/menu.c.obj	644320ce1e9b4be1
+21	164	7023415884636096	CMakeFiles/untitled20.dir/getFileName.c.obj	363c427ba37c3909
+25	178	7023415884776053	CMakeFiles/untitled20.dir/Filters.c.obj	8f60163f37ef40af
+178	347	7023415886426055	untitled20.exe	69a575772ec8c221
