@@ -1,6 +1,7 @@
 #include "BMP.h"
 #include "Init.h"
 #include <stdio.h>
+
 //
 // Created by Artem on 04.04.2023.
 //

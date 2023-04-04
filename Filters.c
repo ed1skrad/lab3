@@ -1,10 +1,17 @@
 #include "BMP.h"
-#include <math.h>
 #include <stdlib.h>
 #include <string.h>
 //
 // Created by Artem on 04.04.2023.
 //
+double my_pow(double base, double exponent) {
+    double result = 1;
+    for (int i = 0; i < exponent; i++) {
+        result *= base;
+    }
+    return result;
+}
+
 void negative(BMPColor *color) {
     color->red = 255 - color->red;
     color->green = 255 - color->green;
@@ -103,9 +110,9 @@ void medianFilter(BMPColor *pixels, int width, int height) {
     memcpy(pixels, temp, sizeof(BMPColor) * width * height);
 }
 void gammaCorrection(BMPColor *color, float gammaValue) {
-    color->red   = (unsigned char)(pow(color->red   / 255.0f, gammaValue) * 255.0f);
-    color->green = (unsigned char)(pow(color->green / 255.0f, gammaValue) * 255.0f);
-    color->blue  = (unsigned char)(pow(color->blue  / 255.0f, gammaValue) * 255.0f);
+    color->red   = (unsigned char)(my_pow(color->red   / 255.0f, gammaValue) * 255.0f);
+    color->green = (unsigned char)(my_pow(color->green / 255.0f, gammaValue) * 255.0f);
+    color->blue  = (unsigned char)(my_pow(color->blue  / 255.0f, gammaValue) * 255.0f);
 }
 
 
